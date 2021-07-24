@@ -18,12 +18,18 @@ kubectl get pod -n istio-system
 
 ## install kubernetes demo microservice
 kubectl apply -f kubernetes-manifest.yaml
+kubectl delete -f kubernetes-manifest.yaml
 
 ## check pod demo microservice
 kubectl get pod
+kubectl delete pod --all
 
 ## check detail information pod 
 kubectl describe pod name_pod 
+
+## install istio plugin
+kubectl apply -f istio/samples/addons
+kubectl delete -f istio/samples/addons
 
 ## check pod istio-system
 kubectl get pod -n istio-system
